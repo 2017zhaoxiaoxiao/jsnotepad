@@ -34,8 +34,6 @@ $(function() {
     style: np.fontStype,
     size: np.fontSize
   });
-  $statusBar.init();
-  $statusBar.display(false);
 
   var $app = $('body');
 
