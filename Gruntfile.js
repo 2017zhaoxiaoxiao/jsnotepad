@@ -5,7 +5,7 @@ module.exports = function (grunt) {
       options: {
         htmlhintrc: '.htmlhintrc'
       },
-      src: ['*.html']
+      src: ['*.html', './com/**/*.html']
     },
     csslint: {
       options: {
