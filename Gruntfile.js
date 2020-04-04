@@ -36,12 +36,6 @@ module.exports = function (grunt) {
         dest: 'dist/'
       }
     },
-    copy: {
-      html: {
-        src: './index.html',
-        dest: './dist/index.html'
-      }
-    },
     concat: {
       js: {
         src: ['js/*.js', './com/**/*.js'],
@@ -69,7 +63,14 @@ module.exports = function (grunt) {
     },
     clean: {
       end: ['dist/bundle.css', 'dist/bundle.js', '.tmp']
-    }
+    },
+           copy: {
+               html: {
+                   src: './index.html',
+                  dest: './dist/index.html'
+              }
+          },
+
   });
 
   grunt.loadNpmTasks('grunt-htmlhint');
@@ -85,5 +86,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-usemin');
 
   grunt.registerTask('lint', ['htmlhint', 'csslint', 'eslint']);
-  grunt.registerTask('build', ['copy:html', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin', 'htmlmin', 'clean:end']);
+  grunt.registerTask('build', ['copy:html', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin', 'htmlmin','imagemin', 'clean:end']);
 };
