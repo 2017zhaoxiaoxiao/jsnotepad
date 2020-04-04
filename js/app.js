@@ -18,12 +18,12 @@ np.fontHandler = function(e) {
   $editor.setFont(e);
 };
 
-/* global $menubar $editor $statusBar: true */
+/* global $menubar $editor : true */
 $(function() {
   $menubar.show(np.menuData);
   $editor.show({
     posHandler: function(row, col) {
-      $statusBar.setRowCol(row, col);
+      
     },
     contentHandler: function(isEmpty) {
       $menubar.enabled(1, 6, isEmpty);
